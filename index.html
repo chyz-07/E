@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>龍呷某飽尚厚來點餐</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <header id="header">
+            <h1 id="logo">龍呷某飽尚厚來點餐</h1>
+        </header>
+        <main id="main">
+            <div id="main-content">
+                <form id="orderForm" action="order.html" method="get">
+                    <label for="table">請輸入桌號</label>
+                    <input type="text" name="table" required>
+
+                    <label for="headcount">請輸入人數</label>
+                    <input type="number" name="headcount" required>
+
+                    <label for="choose">請選擇內用or外帶</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="choose" value="內用" checked>內用</label>
+                        <label><input type="radio" name="choose" value="外帶">外帶</label>
+                    </div>
+                </form>
+            </div>
+        </main>
+        <footer id="footer">
+            <button id="confirm" type="submit" form="orderForm">確認</button>
+        </footer>
+        <script>
+            document.getElementById("orderForm").addEventListener('submit', function(event){
+                event.preventDefault();
+                const tableNumber = document.querySelector('input[name = "table"]').value;
+                const headcount = document.querySelector('input[name = "headcount"]').value;
+                const choose = document.querySelector('input[name = "choose"]:checked').value;
+
+                const url = `order.html?table=${tableNumber}&headcount=${headcount}&choose=${choose}`;
+                window.location.href = url;
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>订餐系统</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .menu {
+            width: 45%;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .selection {
+            width: 45%;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="menu" id="menu">
+            <h2>菜单</h2>
+            <table style="border-collapse: collapse; text-align: center;" border="1">
+                <tr>
+                    <td>
+                        汉堡<br>
+                        <button id="down1">-</button>
+                        <span id="number1">0</span>
+                        <button id="up1">+</button>
+                    </td>
+                    <td>
+                        披萨<br>
+                        <button id="down2">-</button>
+                        <span id="number2">0</span>
+                        <button id="up2">+</button>
+                    </td>
+                    <td>
+                        沙拉<br>
+                        <button id="down3">-</button>
+                        <span id="number3">0</span>
+                        <button id="up3">+</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="selection" id="selection">
+            <h2>已选内容</h2>
+            <ul id="selected-items">
+            </ul>
+        </div>
+    </div>
+    <script>
+        class Count {
+            constructor(up, down, number, name) {
+                this.up = document.getElementById(up);
+                this.down = document.getElementById(down);
+                this.number = document.getElementById(number);
+                this.name = name;
+                this.count = 0;
+
+                this.setupListener();
+            }
+
+            setupListener() {
+                this.up.addEventListener("click", () => {
+                    this.upclick();
+                });
+
+                this.down.addEventListener("click", () => {
+                    this.downclick();
+                });
+            }
+
+            upclick() {
+                this.count++;
+                this.number.textContent = this.count;
+                this.updateSelectedItems();
+            }
+
+            downclick() {
+                this.count--;
+                if (this.count < 0) this.count = 0;
+                this.number.textContent = this.count;
+                this.updateSelectedItems();
+            }
+
+            updateSelectedItems() {
+                const selectedItems = document.getElementById('selected-items');
+                let itemElement = document.getElementById(`item-${this.name}`);
+
+                if (this.count > 0) {
+                    if (!itemElement) {
+                        itemElement = document.createElement('li');
+                        itemElement.id = `item-${this.name}`;
+                        itemElement.textContent = `${this.name} x ${this.count}`;
+                        selectedItems.appendChild(itemElement);
+                    } else {
+                        itemElement.textContent = `${this.name} x ${this.count}`;
+                    }
+                } else if (itemElement) {
+                    selectedItems.removeChild(itemElement);
+                }
+            }
+        }
+
+        const count1 = new Count("up1", "down1", "number1", "汉堡");
+        const count2 = new Count("up2", "down2", "number2", "披萨");
+        const count3 = new Count("up3", "down3", "number3", "沙拉");
+    </script>
+</body>
+</html>

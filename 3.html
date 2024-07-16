@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>龍呷某飽尚厚來點餐</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+        header {
+            background-color: #f8c272;
+            padding: 20px;
+            text-align: center;
+        }
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        #main {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: white;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        footer {
+            background-color: #4caf50;
+            padding: 10px;
+            text-align: center;
+            position: sticky;
+            bottom: 0;
+            width: 100%;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1 style="text-align: center;" id="logo">龍呷某飽尚厚來點餐</h1>
+    </header>
+    <main id="main">
+        <form id="orderForm" action="#" method="get">
+            <label for="table">請輸入桌號</label>
+            <input type="text" name="table" required>
+
+            <label for="headcount">請輸入人數</label>
+            <input type="number" name="headcount" required>
+
+            <label for="choose">請選擇內用or外帶</label>
+            <input type="radio" name="choose" value="dine-in" checked>內用
+            <input type="radio" name="choose" value="dine-out">外帶
+        </form>
+    </main>
+    <footer>
+        <button id="confirm" type="submit" form="orderForm">確認</button>
+    </footer>
+</body>
+</html>

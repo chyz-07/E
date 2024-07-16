@@ -1,0 +1,80 @@
+#header{
+    background-color: rgb(248, 194, 114);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+main h3{
+    display: inline;
+    color: rgb(100, 60, 0);   
+    margin-left: 20px;
+}
+main h1{
+    display: inline;
+    color: rgb(100, 60, 0);
+    margin-left: 20px;
+}
+
+#show{
+    position: relative;
+}
+
+#show #information{
+    position: absolute;
+    right: 20px;
+}
+
+.list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.list li {
+    position: relative; /* 讓每個 li 元素成為定位上下文 */
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.list li b {
+    font-size: 1.1em;
+}
+
+.list li .name{
+    position: absolute;
+    top: 0;
+}
+
+.list li .num {
+    position: absolute;
+    right: 20px;
+    top: 0; /* 调整顶部位置 */
+}
+
+.list li .amount {
+    color: red;
+    position: absolute;
+    right: 20px;
+    top: 20px; /* 将价格显示在第二行 */
+}
+
+.list li .total{
+    color: red;
+    position: absolute;
+    right: 20px;
+}
+
+footer{
+    background-color: #4caf50;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+

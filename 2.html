@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>订餐系统</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 10px;
+            width: 200px;
+            text-align: center;
+            overflow: hidden;
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+        .card-body {
+            padding: 15px;
+        }
+        .card-title {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .card-price {
+            color: #888;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        .card button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 0;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 80%;
+        }
+        .card button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; padding: 20px;">订餐系统菜单</h1>
+    <div class="container">
+        <div class="card">
+            <img src="chicken.jpg" alt="意大利面">
+            <div class="card-body">
+                <div class="card-title">意大利面</div>
+                <div class="card-price">￥30</div>
+                <button>添加到购物车</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="chicken.jpg" alt="披萨">
+            <div class="card-body">
+                <div class="card-title">披萨</div>
+                <div class="card-price">￥50</div>
+                <button>添加到购物车</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="chicken.jpg" alt="汉堡">
+            <div class="card-body">
+                <div class="card-title">汉堡</div>
+                <div class="card-price">￥20</div>
+                <button>添加到购物车</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="chicken.jpg" alt="寿司">
+            <div class="card-body">
+                <div class="card-title">寿司</div>
+                <div class="card-price">￥40</div>
+                <button>添加到购物车</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+/* 設定body的樣式 */
+body {
+    display: flex; /* 使body元素成為flex容器 */
+    flex-direction: column; /* 垂直排列子元素 */
+    min-height: 100vh; /* 設定最小高度為100視口高度 */
+    margin: 0; /* 取消預設的外距 */
+}
+
+/* 設定header的樣式 */
+header {
+    background-color: #f8c272; /* 設定背景顏色 */
+    padding: 20px; /* 設定內距 */
+    text-align: center; /* 文字置中對齊 */
+}
+
+/* 設定main的樣式 */
+main {
+    flex: 1; /* 使main元素填滿剩餘空間 */
+    display: flex; /* 使main元素成為flex容器 */
+    justify-content: center; /* 使子元素在主軸上置中 */
+    align-items: center; /* 使子元素在交叉軸上置中 */
+    padding: 20px; /* 設定內距 */
+}
+
+/* 設定main-content區域的樣式 */
+#main-content {
+    width: 300px; /* 設定寬度 */
+    padding: 20px; /* 設定內距 */
+    border: 1px solid #ccc; /* 設定邊框 */
+    border-radius: 5px; /* 設定邊框圓角 */
+    background-color: white; /* 設定背景顏色 */
+}
+
+/* 設定label的樣式 */
+label {
+    display: block; /* 設定為區塊元素 */
+    margin-top: 10px; /* 設定上方外距 */
+}
+
+/* 設定輸入框的樣式 */
+input[type="text"], input[type="number"] {
+    width: 100%; /* 設定寬度為100% */
+    padding: 8px; /* 設定內距 */
+    margin-top: 5px; /* 設定上方外距 */
+    margin-bottom: 10px; /* 設定下方外距 */
+    border: 1px solid #ccc; /* 設定邊框 */
+    border-radius: 3px; /* 設定邊框圓角 */
+}
+
+/* 設定radio按鈕的樣式 */
+.radio-group {
+    display: flex; /* 使其成為flex容器 */
+    gap: 10px; /* 設定子元素間的間距 */
+    margin-bottom: 10px; /* 設定下方外距 */
+}
+
+.radio-group label {
+    display: flex; /* 使其成為flex容器 */
+    align-items: center; /* 使子元素在交叉軸上置中 */
+    gap: 5px; /* 設定子元素間的間距 */
+}
+
+/* 設定footer的樣式 */
+footer {
+    background-color: #4caf50; /* 設定背景顏色 */
+    padding: 10px; /* 設定內距 */
+    text-align: center; /* 文字置中對齊 */
+    position: sticky; /* 使footer固定在視窗底部 */
+    bottom: 0; /* 使footer固定在視窗底部 */
+    width: 100%; /* 設定寬度為100% */
+}
+
+/* 設定按鈕的樣式 */
+button {
+    width: 100%; /* 設定寬度為100% */
+    padding: 10px; /* 設定內距 */
+    background-color: #4caf50; /* 設定背景顏色 */
+    color: white; /* 設定文字顏色 */
+    border: none; /* 取消邊框 */
+    border-radius: 3px; /* 設定邊框圓角 */
+    cursor: pointer; /* 設定游標樣式 */
+    transition: background-color 0.3s ease; /* 設定背景顏色過渡效果 */
+}
+
+/* 設定按鈕在懸停時的樣式 */
+button:hover {
+    background-color: #45a049; /* 設定背景顏色 */
+}

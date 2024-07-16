@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>食物選擇器</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="controls">
+        <button onclick="special()">選擇特餐</button>
+        <button onclick="showAll()">顯示全部</button>
+    </div>
+
+    <div class="food-cards">
+        <div class="card">
+            <span class="meal-name">特餐一</span>
+        </div>
+        <div class="card">
+            <span class="meal-name">普通飯</span>
+        </div>
+        <div class="card">
+            <span class="meal-name">特餐二</span>
+        </div>
+        <div class="card">
+            <span class="meal-name">特餐三</span>
+        </div>
+    </div>
+</div>
+
+<script>
+function special() {
+    const cards = document.querySelectorAll(".card");
+    cards.forEach(card => {
+        const name = card.querySelector(".meal-name").textContent.toLocaleLowerCase();
+        if (name.includes("特餐")) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
+function showAll() {
+    const cards = document.querySelectorAll(".card");
+    cards.forEach(card => {
+        card.style.display = 'block';
+    });
+}
+</script>
+
+</body>
+</html>

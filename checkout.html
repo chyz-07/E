@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>龍呷某飽尚厚來點餐-結帳</title>
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+    <header id="header">
+        <h1 id="logo" style="text-align: left; color: rgb(100, 60, 0); display: inline;">龍呷某飽尚厚來點餐</h1>
+        <button onclick="leave()" style="display: inline; background-color: rgb(201, 139, 46); border-radius: 5px;">離開點餐</button>
+        <input type="text" id="search-input" placeholder="我想找..." style="display: inline; margin-left: 20px;">
+        <button onclick="searchitems()" style="display: inline; background-color: rgb(201, 139, 46); border-radius: 5px;">搜尋</button>
+    </header>
+    <main id="main">
+        <div id="show">
+            <h1 id="title">確認點餐</h1>
+            <b><h3 id="table"></h3></b>
+            <b><h3 id="information"></h3></b>
+        </div>
+        <ul id="orderList" class="list"></ul>
+    </main>
+    <footer id="footer">
+        <button id="return" onclick="back()">返回點餐頁</button>
+        <button id="byCash" onclick="byCash()">現金付款</button>
+    </footer>
+    <script src="checkout.js"></script>
+</body>
+</html>

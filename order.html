@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>龍呷某飽尚厚來點餐-點餐</title>
+    <link rel="stylesheet" href="order.css">
+</head>
+<body>
+    <header id="header">
+        <h1 id="logo" style="text-align: left; color: rgb(100, 60, 0); display: inline;">龍呷某飽尚厚來點餐</h1>
+        <button id="exit" onclick="leave()" style="display: inline; background-color: rgb(201, 139, 46); border-radius: 5px;">離開點餐</button>
+        <form id="searchForm" onsubmit="searchitems(event)" style="display: inline;">
+            <input type="text" name="search" id="search-input" placeholder="我想找..." style="margin-left: 20px;">
+            <button type="submit" style="background-color: rgb(201, 139, 46); border-radius: 5px;">搜尋</button>
+        </form>
+    </header>
+    <div id="container">
+        <aside id="aside">
+            <p id="information"></p>
+            <button id="yetOrderBtn" onclick="ordering()">未點</button>
+            <button id="haveOrderedBtn" onclick="ordered()">已點</button>
+            <ul id="yetOrderList" class="list"></ul>
+            <ul id="haveOrderedList" class="list" style="display:none;"></ul>
+        </aside>
+        <main id="main">
+            <ul id="category" class="list">
+                <li class="item type" onclick="allcard()">全部</li>
+                <li class="item type" onclick="special()">今日特餐</li>
+                <li class="item type" onclick="chicken()">炸雞</li>
+                <li class="item type" onclick="pasta()">義大利麵</li>
+            </ul>
+            <div id="menu">
+                <div class="card">
+                    <img src="chicken.jpg" class="meal">
+                    <div id="特餐A-number" class="number">0</div>
+                    <div class="card-body">
+                        <div class="meal-name">特餐A</div>
+                        <div class="meal-price">NT$100</div>
+                        <button id="addMeal" class="add-button" data-id="特餐A" data-title="特餐A" data-price="100" onclick="addItem('特餐A')">+</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="chicken.jpg" class="meal">
+                    <div id="特餐B-number" class="number">0</div>
+                    <div class="card-body">
+                        <div class="meal-name">特餐B</div>
+                        <div class="meal-price">NT$100</div>
+                        <button id="addMeal" class="add-button" data-id="特餐B" data-title="特餐B" data-price="100" onclick="addItem('特餐B')">+</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="chicken.jpg" class="meal">
+                    <div id="炸雞A-number" class="number">0</div>
+                    <div class="card-body">
+                        <div class="meal-name">炸雞A</div>
+                        <div class="meal-price">NT$100</div>
+                        <button id="addMeal" class="add-button" data-id="炸雞A" data-title="炸雞A" data-price="100" onclick="addItem('炸雞A')">+</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="chicken.jpg" class="meal">
+                    <div id="炸雞B-number" class="number">0</div>
+                    <div class="card-body">
+                        <div class="meal-name">炸雞B</div>
+                        <div class="meal-price">NT$100</div>
+                        <button id="addMeal" class="add-button" data-id="炸雞B" data-title="炸雞B" data-price="100" onclick="addItem('炸雞B')">+</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="chicken.jpg" class="meal">
+                    <div id="義大利麵-number" class="number">0</div>
+                    <div class="card-body">
+                        <div class="meal-name">義大利麵</div>
+                        <div class="meal-price">NT$100</div>
+                        <button id="addMeal" class="add-button" data-id="義大利麵" data-title="義大利麵" data-price="100" onclick="addItem('義大利麵')">+</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer id="footer">
+        <p id="table" style="display: inline;"></p>
+        <p class="total-price" style="display: inline;">總計0元</p>
+        <button id="checkout" style="display: inline;" onclick="checkout()">結帳</button>
+    </footer>
+    <script src="order.js"></script>
+</body>
+</html>
